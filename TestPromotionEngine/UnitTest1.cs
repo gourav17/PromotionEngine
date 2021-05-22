@@ -14,6 +14,8 @@ namespace TestPromotionEngine
         {
 
             Product product1 = new Product("A");
+            Product product2 = new Product("A");
+            Product product3 = new Product("A");
 
             List<Product> listOfProducts = new List<Product>();
             listOfProducts.Add(product1);
@@ -22,7 +24,7 @@ namespace TestPromotionEngine
           
 
 
-            Assert.AreEqual(0, PromotionChecker.GetTotalPrice(string.Empty));
+            Assert.AreEqual(130, PromotionChecker.GetTotalPrice(Order order1, Promotion prom);
 
         }
     }
