@@ -8,7 +8,7 @@ namespace PromotionEngine
         //returns PromotionID and count of promotions
         public static decimal GetTotalPrice(Order ord, Promotion prom)
         {
-            decimal d = 0M;
+            decimal finalPrice = 0M;
             //get count of promoted products in order
             var copp = ord.Products
                 .GroupBy(x => x.Id)
@@ -17,15 +17,15 @@ namespace PromotionEngine
                 .Sum();
             
             //get count of promoted products from promotion
-            int ppc = prom.ProductInfo.Sum(kvp => kvp.Value);
+            int ppc = prom.ProductInfo.Sum(cp => cp.Value);
 
             
             while (copp >= ppc)
             {
-                d += prom.PromotionPrice;
+                finalPrice += prom.PromotionPrice;
                 copp -= ppc;
             }
-            return d;
+            return finalPrice;
         }
     }
 }

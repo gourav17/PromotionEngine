@@ -17,6 +17,10 @@ namespace TestPromotionEngine
             Product product2 = new Product("A");
             Product product3 = new Product("A");
 
+            
+            //Product product2 = new Product("C");
+            //Product product3 = new Product("D");
+
             List<Product> listOfProducts = new List<Product>();
             listOfProducts.Add(product1);
             listOfProducts.Add(product2);
@@ -29,14 +33,17 @@ namespace TestPromotionEngine
             List<Promotion> promotions = new List<Promotion>();
             promotions = promotionsList.getPromotions();
 
-           // Promotion prom = new Promotion();
+            
+            decimal finalPrice = 0M;
             foreach (Promotion prom in promotions)
             {
-                Assert.AreEqual(130, PromotionChecker.GetTotalPrice(order1, prom));
+                finalPrice+= PromotionChecker.GetTotalPrice(order1, prom);
             }
-            
 
-            
+            Assert.AreEqual(130, finalPrice);
+
+
+
 
         }
     }
