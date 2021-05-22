@@ -163,8 +163,13 @@ namespace TestPromotionEngine
                 finalPriceB += PromotionChecker.GetTotalPrice(ScenarioB, prom);
             }
 
+
+
+            decimal origpriceB = ScenarioB.Products.Sum(x => x.Price);
+           
+
             //Final Test Results Compare Scenario A
-            Assert.AreEqual(370, finalPriceB);
+            Assert.AreEqual(370, origpriceB - finalPriceB);
 
 
 
