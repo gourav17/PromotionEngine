@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PromotionEngine
 {
-    class Order
+    public class Order
     {
     }
 }
