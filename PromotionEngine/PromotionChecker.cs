@@ -6,7 +6,7 @@ namespace PromotionEngine
     {
         public static int GetTotalPrice(string empty)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
