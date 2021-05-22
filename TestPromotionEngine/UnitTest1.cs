@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using PromotionEngine;
 
 namespace TestPromotionEngine
 {
@@ -10,7 +11,8 @@ namespace TestPromotionEngine
         public void TestPromotionChecker()
         {
 
-            Assert.AreEqual(0, 0);
+
+            Assert.AreEqual(0, PromotionChecker.GetTotalPrice(string.Empty));
 
         }
     }
