@@ -19,6 +19,8 @@ namespace TestPromotionEngine
 
             List<Product> listOfProducts = new List<Product>();
             listOfProducts.Add(product1);
+            listOfProducts.Add(product2);
+            listOfProducts.Add(product3);
 
             Order order1 = new Order(1, listOfProducts);
 
@@ -27,11 +29,14 @@ namespace TestPromotionEngine
             List<Promotion> promotions = new List<Promotion>();
             promotions = promotionsList.getPromotions();
 
-            Promotion prom = new Promotion();
+           // Promotion prom = new Promotion();
+            foreach (Promotion prom in promotions)
+            {
+                Assert.AreEqual(130, PromotionChecker.GetTotalPrice(order1, prom));
+            }
             
 
-
-            Assert.AreEqual(130, PromotionChecker.GetTotalPrice(order1, prom));
+            
 
         }
     }
