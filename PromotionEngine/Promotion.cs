@@ -18,5 +18,11 @@ namespace PromotionEngine
             this.ProductInfo = _prodInfo;
             this.PromotionPrice = _pp;
         }
+
+
+
+      
+
     }
+
 }

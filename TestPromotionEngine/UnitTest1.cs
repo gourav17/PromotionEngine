@@ -22,8 +22,14 @@ namespace TestPromotionEngine
 
             Order order1 = new Order(1, listOfProducts);
 
+            PromotionsList promotionsList = new PromotionsList();
+
+            List<Promotion> promotions = new List<Promotion>();
+            promotions = promotionsList.getPromotions();
+
             Promotion prom = new Promotion();
-           
+            
+
 
             Assert.AreEqual(130, PromotionChecker.GetTotalPrice(order1, prom));
 
