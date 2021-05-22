@@ -11,9 +11,10 @@ namespace TestPromotionEngine
         public void TestPromotionChecker()
         {
 
-            
-            PromotionEngine.Order order1 = new PromotionEngine.Order();
-            
+            Product product1 = new Product();
+            Order order1 = new Order(1,product1);
+          
+
 
             Assert.AreEqual(0, PromotionChecker.GetTotalPrice(string.Empty));
 
