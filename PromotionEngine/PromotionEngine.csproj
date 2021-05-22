@@ -48,6 +48,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Promotion.cs" />
     <Compile Include="PromotionChecker.cs" />
+    <Compile Include="PromotionsList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
