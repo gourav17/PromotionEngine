@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace PromotionEngine
 {
-    class Promotion
+    public class Promotion
     {
+        public int PromotionID { get; set; }
+        public Dictionary<string, int> ProductInfo { get; set; }
+        public decimal PromotionPrice { get; set; }
+
+        public Promotion(int _promID, Dictionary<string, int> _prodInfo, decimal _pp)
+        {
+            this.PromotionID = _promID;
+            this.ProductInfo = _prodInfo;
+            this.PromotionPrice = _pp;
+        }
     }
 }

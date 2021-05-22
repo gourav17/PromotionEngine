@@ -21,10 +21,11 @@ namespace TestPromotionEngine
             listOfProducts.Add(product1);
 
             Order order1 = new Order(1, listOfProducts);
-          
 
+            Promotion prom = new Promotion();
+           
 
-            Assert.AreEqual(130, PromotionChecker.GetTotalPrice(Order order1, Promotion prom);
+            Assert.AreEqual(130, PromotionChecker.GetTotalPrice(order1, prom));
 
         }
     }
