@@ -1,6 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PromotionEngine;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace TestPromotionEngine
 {
@@ -11,8 +13,12 @@ namespace TestPromotionEngine
         public void TestPromotionChecker()
         {
 
-            Product product1 = new Product();
-            Order order1 = new Order(1,product1);
+            Product product1 = new Product("A");
+
+            List<Product> listOfProducts = new List<Product>();
+            listOfProducts.Add(product1);
+
+            Order order1 = new Order(1, listOfProducts);
           
 
 
