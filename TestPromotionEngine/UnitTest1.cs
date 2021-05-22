@@ -177,5 +177,65 @@ namespace TestPromotionEngine
 
 
         }
+
+        [TestMethod]
+        public void TestPromotionChecker4()
+        {
+            //Creating Products
+
+
+            Product product1 = new Product("A");
+            Product product2 = new Product("B");
+            Product product3 = new Product("C");
+            Product product4 = new Product("D");
+
+            //Adding products to List Scenario C
+            List<Product> listOfProductsB = new List<Product>();
+            // 3 * A
+            listOfProductsB.Add(product1);
+            listOfProductsB.Add(product1);
+            listOfProductsB.Add(product1);
+            
+
+            /// 5 * B
+            listOfProductsB.Add(product2);
+            listOfProductsB.Add(product2);
+            listOfProductsB.Add(product2);
+            listOfProductsB.Add(product2);
+            listOfProductsB.Add(product2);
+
+            //1 * C
+            listOfProductsB.Add(product3);
+
+            //1 * D
+            listOfProductsB.Add(product4);
+
+            //Creating Order
+            Order ScenarioC = new Order(3, listOfProductsB);
+
+
+            //Fetching available Promotions.
+            PromotionsList promotionsList = new PromotionsList();
+            List<Promotion> promotions = new List<Promotion>();
+            promotions = promotionsList.getPromotions();
+
+
+            //Checking if Products in Order is eligible for Promoional Price.
+            decimal finalPriceA = 0M;
+            foreach (Promotion prom in promotions)
+            {
+                finalPriceA += PromotionChecker.GetTotalPrice(ScenarioC, prom);
+            }
+
+            decimal origpriceA = ScenarioC.Products.Sum(x => x.Price);
+
+            //Final Test Results Compare Scenario A
+            Assert.AreEqual(280, origpriceA - finalPriceA);
+
+
+
+
+
+        }
     }
 }
