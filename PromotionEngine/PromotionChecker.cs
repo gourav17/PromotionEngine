@@ -24,9 +24,9 @@ namespace PromotionEngine
             //get count of promoted products from promotion
             int ppc = prom.ProductInfo.Sum(cp => cp.Value);
 
-         
 
 
+            
 
             while (copp >= ppc)
             {
