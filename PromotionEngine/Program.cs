@@ -35,9 +35,9 @@ namespace PromotionEngine
             decimal origprice = order1.Products.Sum(x => x.Price);
             decimal promoprice = promoprices.Sum();
 
-            //Console.WriteLine($"OrderID: {ord.OrderID} => Original price: {origprice.ToString("0.00")} | Rebate: {promoprice.ToString("0.00")} | Final price: {(origprice - promoprice).ToString("0.00")}");
+        
+            Console.WriteLine($"OrderID: { order1.OrderID} => Original price: { origprice.ToString("0.00") } | Special Discount: { promoprice.ToString("0.00") } | Please Pay: { (origprice - promoprice).ToString("0.00")}");
 
-            Console.WriteLine("OrderID: " + order1.OrderID + "=> Original price: " + origprice.ToString("0.00") + " | Special Discount: " + promoprice.ToString("0.00") + " | Please Pay: " + (origprice - promoprice).ToString("0.00"));
 
             Console.ReadLine();
 

@@ -18,8 +18,8 @@ namespace TestPromotionEngine
             Product product3 = new Product("A");
 
             
-            //Product product2 = new Product("C");
-            //Product product3 = new Product("D");
+            //Product product4 = new Product("C");
+            //Product product5 = new Product("D");
 
             //Adding products to List
             List<Product> listOfProducts = new List<Product>();
